@@ -5,86 +5,94 @@ import './Add.css'
 
 export default function Add() {
   const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
-  const [genre, setGenre] = useState('')
-  const [languagePL, setLanguagePL] = useState(true)
-  const [score, setScore] = useState(null)
+  const [rating, setRating] = useState('')
   const [cover, setCover] = useState('')
+  const [platform, setPlatform] = useState([])
 
   const resetForm = () => {
     setTitle('')
-    setDescription('')
-    setGenre('')
-    setLanguagePL(true)
-    setScore(null)
     setCover('')
+    setRating('')
+    setPlatform([])
   }
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    const game = {
+      title,
+      cover,
+      platform,
+      rating
+    }
 
+    console.log(game);
+    resetForm()
   }
 
   return (
-    <form onSubmit={handleSubmit} className='add_form'>
+    <form className='add_form' onSubmit={handleSubmit}>
       <h1>Dodaj grę</h1>
       <label>
-        <span>Tytuł: </span>
+        <h3>Tytuł: </h3>
         <input 
+          onChange={(e) => {
+            setTitle(e.target.value)
+          }}
           type="text"
-          placeholder='podaj tytuł...'
+          placeholder='podaj tytuł'
           value={title}
-          onChange = {e => {
-            setTitle(e.value.target)
-          }}
            />
       </label>
       <label>
-        <span>Opis: </span>
-        <textarea 
-          type="text"
-          placeholder='podaj tytuł...'
-          value={description}
-          onChange = {e => {
-            setDescription(e.value.target)
-          }}
-           />
+        <h3>Platforma: </h3>
+        <div>
+          <div className='checkbox_div'>
+            <input type="checkbox" value={'ps4'} onChange={(e) => {
+              setPlatform((prevValue) => {
+                return [...prevValue, e.target.value]
+              })
+            }} />
+            <span>ps4</span>
+          </div>
+          <div className='checkbox_div'>
+            <input type="checkbox" value={'ns'} onChange={(e) => {
+              setPlatform((prevValue) => {
+                return [...prevValue, e.target.value]
+              })
+            }} />
+            <span>ns</span>
+          </div>
+        </div>
       </label>
       <label>
-        <span>Rodzaj: </span>
+        <h3>Okładka: </h3>
         <input 
-          type="text"
-          placeholder='podaj tytuł...'
-          value={genre}
-          onChange = {e => {
-            setGenre(e.value.target)
+          onChange={(e) => {
+            setCover(e.target.value)
           }}
+          type="text"
+          placeholder='dodaj okładkę'
            />
       </label>
       <label>
-        <span>Wersja PL?</span>
-        <select>
-          <option value={true}>tak</option>
-          <option value={false}>nie</option>
+        <h3>Ocena: </h3>
+        <select onChange={(e) => {
+          setRating(e.target.value)
+        }}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
         </select>
       </label>
-      <label>
-        <span>oceń: </span>
-        <input 
-          type="number"
-          min={1}
-          max={10}
-          value={score}
-           />
-      </label>
-      <label>
-        <span>Dodaj okładkę: </span>
-        <input 
-          type="text"
-          placeholder='adres okładki'
-          value={cover}
-           />
-      </label>
-      <button type='submit'>wyślij</button>
+      <button type='submit'>Wyślij</button>
     </form>
   )
 }
