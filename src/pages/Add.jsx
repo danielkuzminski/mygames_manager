@@ -1,11 +1,20 @@
 import { useState } from 'react'
 
+// import router
+import { useNavigate } from 'react-router-dom'
+
+// database imports
+import {db} from '../firebase/config'
+import { addDoc, collection } from 'firebase/firestore'
+
 // styles
 import './Add.css'
 
 export default function Add() {
+  const navigate = useNavigate()
+
   const [title, setTitle] = useState('')
-  const [rating, setRating] = useState('')
+  const [rating, setRating] = useState('empty')
   const [cover, setCover] = useState('')
   const [platform, setPlatform] = useState([])
 
@@ -16,18 +25,22 @@ export default function Add() {
     setPlatform([])
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    let ref = collection(db, 'games')
     
-    const game = {
+
+    await addDoc(ref, {
       title,
       cover,
       platform,
       rating
-    }
+    })
 
-    console.log(game);
     resetForm()
+
+    navigate('/')
   }
 
   return (
@@ -112,4 +125,4 @@ export default function Add() {
   )
 }
 
-// to fix issue with checkbox
+// to fix issue with checkbox adding items firstly checked, then unchecked
