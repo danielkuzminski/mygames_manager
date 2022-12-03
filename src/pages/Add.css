@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  /* border: 1px solid #000; */
+  box-shadow: 0 0 3rem grey;
+  padding: 20px;
 }
 
 .add_form h1 {
@@ -47,4 +47,12 @@
   background: linear-gradient(to right, grey, white) ;
   border-radius: 20px;
   color: white;
+}
+
+.add_form select {
+  width: 100%;
+  background-color: #f1f1f1;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px;
 }

@@ -42,6 +42,7 @@ export default function Add() {
           type="text"
           placeholder='podaj tytuł'
           value={title}
+          required
            />
       </label>
       <label>
@@ -49,17 +50,27 @@ export default function Add() {
         <div>
           <div className='checkbox_div'>
             <input type="checkbox" value={'ps4'} onChange={(e) => {
-              setPlatform((prevValue) => {
-                return [...prevValue, e.target.value]
+              const input2c = e.target.checked
+              const input2v = e.target.value
+
+              if(input2v && input2c === true && !platform.includes(input2v)){
+                setPlatform((prevValue) => {
+                  return [...prevValue, input2v]
               })
+              }
             }} />
             <span>ps4</span>
           </div>
           <div className='checkbox_div'>
             <input type="checkbox" value={'ns'} onChange={(e) => {
-              setPlatform((prevValue) => {
-                return [...prevValue, e.target.value]
-              })
+              const inputV = e.target.value
+              const inputC = e.target.checked
+
+              if(inputV && inputC === true && !platform.includes(inputV)){
+                setPlatform((prevValue) => {
+                  return [...prevValue, inputV]
+                })
+              }
             }} />
             <span>ns</span>
           </div>
@@ -73,13 +84,17 @@ export default function Add() {
           }}
           type="text"
           placeholder='dodaj okładkę'
+          value={cover}
            />
       </label>
       <label>
         <h3>Ocena: </h3>
-        <select onChange={(e) => {
+        <select 
+          required
+          onChange={(e) => {
           setRating(e.target.value)
         }}>
+          <option defaultValue={'empty'}>--</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -96,3 +111,5 @@ export default function Add() {
     </form>
   )
 }
+
+// to fix issue with checkbox
