@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+
+.game-card {
+  width: 480px;
+  margin: 20px auto;
+  height: 120px;
+  background-color: #f0f0f0;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  transition: background-color .3s;
+  box-shadow: 0 0 3px #191414;
+  position: relative;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 1.5rem;
+}
+
+.game-card:hover {
+  background-color: #f8f8f8;
+}
+
+.game-title {
+  text-transform: uppercase;
+}
+
+.game-image {
+  width: 90px;
+  aspect-ratio: 1/1;
+}
+
+.game-rating {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  background-color: #2222cf;
+  color: #fff;
+  width: 1.7rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+}

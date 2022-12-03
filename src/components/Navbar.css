@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+
 .navigation {
   width: 100%;
   display: flex;
@@ -7,6 +9,23 @@
   box-shadow: 0 0 1rem #efe4e4;
 }
 
-.nav-link {
+.nav-link-title {
   text-transform: uppercase;
+  font-family: 'Bungee Shade', cursive;
+}
+
+.nav-link-btn {
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  transition: background-color .3s;
+  box-shadow: 0 0 3px #191414;
+  font-family: 'Bungee Shade', cursive;
+}
+
+.nav-link-btn:hover {
+  background-color: #f8f8f8;
 }

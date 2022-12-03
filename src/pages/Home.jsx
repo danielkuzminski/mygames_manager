@@ -7,6 +7,7 @@ import { collection, getDocs } from 'firebase/firestore';
 
 // styles
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [games, setGames] = useState(null);
@@ -30,7 +31,9 @@ export default function Home() {
     <div>
       {games && games.map((game) => (
         <div key={game.id} className='game-card'>
-          <p>{game.title}</p>
+          <Link><p className='game-title'>{game.title}</p></Link>
+          <img className='game-image' src={game.cover} alt="" />
+          <span className='game-rating'>{game.rating}</span>
         </div>
       ))}
     </div>
