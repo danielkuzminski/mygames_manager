@@ -1,3 +1,4 @@
+//react imports
 import { useState } from 'react'
 
 // import router
@@ -14,9 +15,9 @@ export default function Add() {
   const navigate = useNavigate()
 
   const [title, setTitle] = useState('')
-  const [rating, setRating] = useState('empty')
+  const [rating, setRating] = useState('')
   const [cover, setCover] = useState('')
-  const [platform, setPlatform] = useState([])
+  const [platform, setPlatform] = useState('')
 
   const resetForm = () => {
     setTitle('')
@@ -60,34 +61,14 @@ export default function Add() {
       </label>
       <label>
         <h3>Platforma: </h3>
-        <div>
-          <div className='checkbox_div'>
-            <input type="checkbox" value={'ps4'} onChange={(e) => {
-              const input2c = e.target.checked
-              const input2v = e.target.value
-
-              if(input2v && input2c === true && !platform.includes(input2v)){
-                setPlatform((prevValue) => {
-                  return [...prevValue, input2v]
-              })
-              }
-            }} />
-            <span>ps4</span>
-          </div>
-          <div className='checkbox_div'>
-            <input type="checkbox" value={'ns'} onChange={(e) => {
-              const inputV = e.target.value
-              const inputC = e.target.checked
-
-              if(inputV && inputC === true && !platform.includes(inputV)){
-                setPlatform((prevValue) => {
-                  return [...prevValue, inputV]
-                })
-              }
-            }} />
-            <span>ns</span>
-          </div>
-        </div>
+        <select 
+          required
+          onChange={(e) => {
+          setPlatform(e.target.value)
+        }}>
+          <option default value='ps4'>playstation 4</option>
+          <option value='ns'>nintendo switch</option>
+        </select>
       </label>
       <label>
         <h3>Okładka: </h3>
@@ -124,5 +105,3 @@ export default function Add() {
     </form>
   )
 }
-
-// to fix issue with checkbox adding items firstly checked, then unchecked
