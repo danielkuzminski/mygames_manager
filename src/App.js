@@ -5,10 +5,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Add from './pages/Add';
 import NotFound from './pages/NotFound';
+import Game from './pages/Game';
+import Navbar from './components/Navbar';
 
 // styles
 import './App.css';
-import Navbar from './components/Navbar';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/add_game' element={<Add />} />
+          <Route path='/games/:id' element={<Game />} ></Route>
           <Route path='/*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

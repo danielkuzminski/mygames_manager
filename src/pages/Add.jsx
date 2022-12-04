@@ -66,7 +66,7 @@ export default function Add() {
           onChange={(e) => {
           setPlatform(e.target.value)
         }}>
-          <option default value='ps4'>playstation 4</option>
+          <option value='ps4'>playstation 4</option>
           <option value='ns'>nintendo switch</option>
         </select>
       </label>

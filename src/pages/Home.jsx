@@ -31,7 +31,7 @@ export default function Home() {
     <div>
       {games && games.map((game) => (
         <div key={game.id} className='game-card'>
-          <Link><p className='game-title'>{game.title}</p></Link>
+          <Link to={`games/${game.id}`}><p className='game-title'>{game.title}</p></Link>
           <img className='game-image' src={game.cover} alt="" />
           <span className='game-rating'>{game.rating}</span>
         </div>
