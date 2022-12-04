@@ -28,7 +28,7 @@ export default function Home() {
   console.log(games);
 
   return (
-    <div>
+    <div className='home'>
       {games && games.map((game) => (
         <div key={game.id} className='game-card'>
           <Link to={`games/${game.id}`}><p className='game-title'>{game.title}</p></Link>

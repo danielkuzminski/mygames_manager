@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
+.home{
+  padding: 1px;
+}
+
 .game-card {
   width: 480px;
   margin: 20px auto;
