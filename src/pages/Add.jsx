@@ -8,6 +8,9 @@ import { useNavigate } from 'react-router-dom'
 import {db} from '../firebase/config'
 import { addDoc, collection } from 'firebase/firestore'
 
+// components
+import Navbar from '../components/Navbar';
+
 // styles
 import './Add.css'
 
@@ -41,10 +44,14 @@ export default function Add() {
 
     resetForm()
 
-    navigate('/')
+    navigate('/home')
   }
 
   return (
+    <div>
+
+
+    <Navbar />
     <form className='add_form' onSubmit={handleSubmit}>
       <h1>Dodaj grę</h1>
       <label>
@@ -103,5 +110,6 @@ export default function Add() {
       </label>
       <button type='submit'>Wyślij</button>
     </form>
+    </div>
   )
 }

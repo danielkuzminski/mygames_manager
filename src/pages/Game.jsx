@@ -10,6 +10,7 @@ import {doc, getDoc} from 'firebase/firestore'
 
 // styles
 import './Game.css'
+import Navbar from '../components/Navbar'
 
 export default function Game() {
   const {id} = useParams()
@@ -27,6 +28,7 @@ export default function Game() {
 
   return (
     <div>
+      <Navbar />
       { data && (
         <div className='game-container'
           style={{width: "100vw", 

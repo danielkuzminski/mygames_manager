@@ -8,6 +8,7 @@ import { collection, getDocs } from 'firebase/firestore';
 // styles
 import './Home.css';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   const [games, setGames] = useState(null);
@@ -29,6 +30,7 @@ export default function Home() {
 
   return (
     <div className='home'>
+      <Navbar />
       {games && games.map((game) => (
         <div key={game.id} className='game-card'>
           <Link to={`games/${game.id}`}><p className='game-title'>{game.title}</p></Link>
