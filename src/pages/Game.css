@@ -4,13 +4,13 @@
 
 .game-presentation {
   position: absolute;
-  top: 100px;
+  top: 50px;
   right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: rgba(235, 225, 225, .8);
-  width: 70%;
+  width: 50%;
   padding: 20px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
