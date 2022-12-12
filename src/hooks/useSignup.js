@@ -1,4 +1,7 @@
+// react
 import {useState} from 'react'
+
+// firebase
 import { auth } from '../firebase/config'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 

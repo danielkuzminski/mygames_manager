@@ -24,8 +24,26 @@
   background-color: #000;
   color: #fff;
   transition: background-color .3s;
+  margin-left: 10px;
   /* box-shadow: 0 0 8px inset #191414; */
   /* font-family: 'Bungee Shade', cursive; */
+}
+
+.btn-logout {
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color .3s;
+  margin-left: 10px;
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-logout:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .nav-link-btn:hover {
