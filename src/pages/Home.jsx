@@ -32,11 +32,11 @@ export default function Home() {
     <div className='home'>
       <Navbar />
       {games && games.map((game) => (
-        <div key={game.id} className='game-card'>
-          <Link to={`games/${game.id}`}><p className='game-title'>{game.title}</p></Link>
+        <Link to={`games/${game.id}`} key={game.id} className='game-card'>
+          <p className='game-title'>{game.title}</p>
           <img className='game-image' src={game.cover} alt="" />
           <span className='game-rating'>{game.rating}</span>
-        </div>
+        </Link>
       ))}
     </div>
   );
