@@ -27,6 +27,7 @@
 
 .game-title {
   text-transform: uppercase;
+  text-shadow: 0 0 10px #000;
 }
 
 .game-image {

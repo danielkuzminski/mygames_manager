@@ -13,6 +13,7 @@
 .nav-link-title {
   text-transform: uppercase;
   font-family: 'Bungee Shade', cursive;
+  text-shadow: 0 0 3px #000;
 }
 
 .nav-link-btn {
