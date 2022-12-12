@@ -2,14 +2,13 @@ import { useState } from 'react'
 
 // router
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-// database and authentication
-import { auth } from '../firebase/config'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+// hooks
+import { useSignup } from '../hooks/useSignup'
 
 // styles
 import './Login.css'
-import { async } from '@firebase/util'
 
 export default function Singnup() {
 
@@ -18,22 +17,19 @@ export default function Singnup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [displayName, setDisplayName] = useState('')
-  const [error, setError] = useState(null)
+  const {error, signup} = useSignup()
 
-  const signup = async(email, password, displayName) => {
-    
-  }
+
 
   const handleSignup = (e) => {
     e.preventDefault();
     
-    signup()
+    signup(email, password, displayName)
 
-    console.log(email, password);
+    console.log(email, password, displayName);
 
     navigate('/home')
   }
-
 
   return (
     <div>
@@ -76,6 +72,7 @@ export default function Singnup() {
           />
       </label>
       <button className='login-button' type='submit'>Stwórz</button>
+      <Link className='login-button signup' to={'/'}>do logowania</Link>
     </form>
     </div>
   )
