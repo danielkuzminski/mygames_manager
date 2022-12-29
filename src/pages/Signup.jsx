@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 // router
-import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 // hooks
@@ -11,8 +10,6 @@ import { useSignup } from '../hooks/useSignup'
 import './Login.css'
 
 export default function Singnup() {
-
-  const navigate = useNavigate()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -27,8 +24,6 @@ export default function Singnup() {
     signup(email, password, displayName)
 
     console.log(email, password, displayName);
-
-    navigate('/home')
   }
 
   return (

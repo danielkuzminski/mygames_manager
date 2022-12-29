@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 // routing
-import { Link,useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 //hooks
 import { useLogin } from '../hooks/useLogin'
@@ -15,16 +15,12 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const {error, login} = useLogin()
 
-  const navigate = useNavigate()
-
   const handleLogin = (e) => {
     e.preventDefault();
     
     login(email, password)
 
     console.log('zalogowano');
-
-    navigate('/home')
   }
 
   return (

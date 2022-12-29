@@ -12,6 +12,7 @@ import Game from './pages/Game';
 // styles
 import './App.css';
 
+
 function App() {
   return (
     <div className="App">
